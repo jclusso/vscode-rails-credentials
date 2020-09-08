@@ -1,7 +1,7 @@
 {
 	"name": "vscode-rails-credentials",
 	"displayName": "Rails Credentials",
-	"publisher": "jclusso",
+	"publisher": "jarrett",
 	"description": "",
 	"repository": {
 		"type": "git",
