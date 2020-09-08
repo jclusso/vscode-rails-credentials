@@ -1,0 +1,74 @@
+{
+	"name": "vscode-rails-credentials",
+	"displayName": "Rails Credentials",
+	"publisher": "jclusso",
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jclusso/vscode-rails-credentials"
+	},
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.railsCredentials"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.railsCredentials",
+				"title": "Rails Credentials"
+			}
+		],
+		"configuration": {
+			"properties": {
+				"railsCredentials.command": {
+					"type": "string",
+					"default": "bin/rails credentials:edit",
+					"description": "Command to run",
+					"scope": "window"
+				},
+				"railsCredentials.openIn": {
+					"type": "string",
+					"default": "railsCredentials.existingWindow",
+					"enum": [
+						"railsCredentials.existingWindow",
+						"railsCredentials.newWindow"
+					],
+					"enumDescriptions": [
+						"Open in existing window",
+						"Open in new window"
+					],
+					"description": "Specifies where to open the credentials",
+					"scope": "window"
+				}
+			}
+		},
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "extension.railsCredentials",
+					"when": "editorIsOpen"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2"
+	}
+}
